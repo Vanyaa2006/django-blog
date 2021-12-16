@@ -32,7 +32,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["vsychev.herokuapp.com"]
 
 
 # Application definition
@@ -141,7 +141,7 @@ MEDIA_URL = '/media/'
 
 LOGIN_URL = "/users/login/"
 
-if True:
+if os.environ.get('ENV') == 'PRODUCTION':
     STATIC_ROOT = BASE_DIR / 'staticfiles'
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     DATABASES['default'] = dj_database_url.config(
